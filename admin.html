@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration des Restaurants</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+           <a href="index.html"><img src="images/logo.png" alt=""></a> 
+        </div>
+        <div id="search">
+            <select name="type" id="typeSearch">
+                <option value="">Select</option>
+                <option value="nom">Nom</option>
+                <option value="specialite">Spécialité</option>
+            </select>
+            <input type="text" id="input" placeholder="Nom du restaurant">
+            <button id="searchButton"> <i class="fa-solid fa-magnifying-glass"></i> </button>
+            <button onclick="window.location.href='admin.html'"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </header>
+    
+    <main>
+        <section id="add-restaurant">
+            <h2>Ajouter un Restaurant</h2>
+            <form id="restaurant-form">
+                <input type="text" id="nom" placeholder="Nom du restaurant" >
+                <input type="text" id="specialite" placeholder="Spécialité" >
+                <input type="text" id="adresse" placeholder="Adresse" >
+                <input type="number" id="notation" placeholder="Notation" min="0" max="5">
+                <input type="text" id="tel" placeholder="Téléphone">
+                <input type="email" id="email" placeholder="Email">
+                <input type="text" id="site" placeholder="Site web">
+                <input type="text" id="photo" placeholder="URL de la photo">
+                <textarea id="avis" placeholder="Avis"></textarea>
+                <button id="add-button">Ajouter Restaurant</button>
+            </form>
+        </section>
+
+        <section id="restaurant-list">
+            <h2>Liste des Restaurants</h2>
+            <table id="restaurants-table">
+                <thead>
+                    <tr>
+                        <th>Photo</th>
+                        <th>Nom</th>
+                        <th>Spécialité</th>
+                        <th>Notation</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="restaurants-body">
+                    <!-- Les restaurants seront ajoutés dynamiquement ici -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script  src="js/admin.js"></script>
+</body>
+</html>
